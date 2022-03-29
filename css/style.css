@@ -1,0 +1,37 @@
+
+/** carousel **/
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon{
+	height: 50px;
+	width: 50px;
+	border: 1px solid transparent;
+	background-color: rgba(0,0,0,1);
+	border-radius: 100%;
+	background-image: none;
+	position: relative;
+}
+
+.carousel-control-next-icon:after{
+    font-family: "Font Awesome 5 Free";
+    content: "\f105";
+    position: absolute;
+    font-size: 55px;
+    font-weight: 600;
+    left: 5px;
+    right: 0;
+    top: -35%;
+}
+
+.carousel-control-prev-icon:after{
+	font-family: "Font Awesome 5 Free";
+  	content: "\f104";
+ 	font-size: 55px;
+  	color: #fff;
+  	position: absolute;
+  	font-weight: 600;
+  	top: -35%;
+  	left: 0;
+  	right: 5px;
+}
+
