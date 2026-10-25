@@ -1,0 +1,147 @@
+{
+  "dataset_repo": "knkarthick/dialogsum",
+  "splits": {
+    "train": 6000,
+    "validation": 500,
+    "test": 1500
+  },
+  "eval_split": "test",
+  "eval_n": 250,
+  "token_len": {
+    "median": 254,
+    "p95": 464,
+    "max": 768,
+    "median_supervised": 32
+  },
+  "baseline_lead3": {
+    "name": "Lead-3 (first three turns, verbatim)",
+    "rouge1": 0.26577740697497126,
+    "rouge2": 0.06464371648910054,
+    "rougeLsum": 0.24603533403187972,
+    "mean_words": 39.316,
+    "median_words": 34.0
+  },
+  "reference_length": {
+    "mean_words": 19.52,
+    "median_words": 18.0
+  },
+  "base_params": 1543714304,
+  "baseline_zeroshot": {
+    "name": "Qwen/Qwen2.5-1.5B-Instruct zero-shot (same prompt)",
+    "rouge1": 0.2822324253093497,
+    "rouge2": 0.07561242769176264,
+    "rougeLsum": 0.2423744197235219,
+    "mean_words": 49.356,
+    "median_words": 48.0,
+    "empty_rate": 0.0,
+    "copy_rate": 0.0,
+    "repeat_rate": 0.0
+  },
+  "lora": {
+    "r": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "trainable_params": 18464768,
+    "trainable_pct": 1.1961259899033754,
+    "adapter_mb": 36.929536
+  },
+  "train_runtime_sec": 3770.4882,
+  "train_loss": 0.8853974564870198,
+  "total_steps": 750,
+  "peak_gpu_gb": 6.34630656,
+  "eval_loss_by_epoch": [
+    {
+      "epoch": 1.0,
+      "eval_loss": 0.9230449795722961
+    },
+    {
+      "epoch": 2.0,
+      "eval_loss": 0.9273858666419983
+    }
+  ],
+  "model": {
+    "name": "LoRA fine-tuned",
+    "rouge1": 0.41845302150901786,
+    "rouge2": 0.15212679954051714,
+    "rougeLsum": 0.3623705738893997,
+    "mean_words": 24.588,
+    "median_words": 24.0,
+    "empty_rate": 0.0,
+    "copy_rate": 0.016,
+    "repeat_rate": 0.0
+  },
+  "delta_vs_zeroshot": {
+    "rouge1": 0.13622059619966814,
+    "rouge2": 0.0765143718487545,
+    "rougeLsum": 0.1199961541658778
+  },
+  "beats_zeroshot": true,
+  "beats_lead3": true,
+  "samples": [
+    {
+      "dialogue": "#Person1#: Hi! What are you watching?\n#Person2#: It's a program about islam. It's very interesting.\n#Person1#: Wow! So many people! Where are they and what are they doing?\n#Person2#: They are muslims on a pilgrimage to mecca. Muslims call this pilgrimage 'haj'.\n#Person1#: Why do they go there?\n#Person2#: Muslims believe that every man who is able should go on a haj at least once in his life. Mecca",
+      "reference": "#Person1# and #Person2# talk about pilgrims around the world, including Muslims' pilgrimage to mecca and Christians' pilgrimage to Canterbury or Vatican. #Person2# thinks faith heals people instead of magical places.",
+      "zero_shot": "The conversation discusses Islam, specifically the Hajj pilgrimage to Mecca by Muslim men. People visit for religious reasons but also because it can lead to health issues due to overcrowding and accidents. The speaker mentions other places like Lourdes where some believe healing occurs through faith.",
+      "fine_tuned": "#Person2# tells #Person1# it's a program about Islam. #Person2# explains that Muslims believe that every man who is able should go on a Haj at least once in his life. #Person2# also talks about the reasons why Muslim pilgrims go to Mecca and how many people go on the Haj each year."
+    },
+    {
+      "dialogue": "#Person1#: I want to send this package by first-class mail.\n#Person2#: Do you want it insured?\n#Person1#: Yes, for 50 dollars, please. I'd also like some stamps--a book of 22 and three airmail.\n#Person2#: You'll have to get those at the stamp window over there, next to general delivery.\n#Person1#: Can I get money orders there, too?\n#Person2#: No, that's to the left, three windows down the hall.",
+      "reference": "#Person1# is sending a package with the help of #Person2#.",
+      "zero_shot": "#Person1# wants to send a package by first-class mail with insurance for $50 and additional stamps including a book of 22 and three airmails. #Person2# informs them they need to go to the stamp window on their right near general delivery for the stamps and money orders are available to the left, three windows down the hall.",
+      "fine_tuned": "#Person1# wants to send a package by first-class mail with insurance and some stamps. #Person2# tells #Person1# where to buy them."
+    },
+    {
+      "dialogue": "#Person1#: Lily, can you take part in our picnic this weekend?\n#Person2#: That sounds great. Where are you going?\n#Person1#: I think we can go to the river, go around and have supper.\n#Person2#: What should I bring?\n#Person1#: Nothing. Just wear comfortable clothes and good shoes for walking. We'll bring everything.",
+      "reference": "#Person1# invites Lily to picnic this weekend. Lily accepts.",
+      "zero_shot": "Lily invites Person 2 to join them on a picnic at the river where they will have supper. Person 2 asks what they should bring and is told not to bring anything as everything will be provided.",
+      "fine_tuned": "Lily agrees to join #Person1#'s picnic at the river."
+    },
+    {
+      "dialogue": "#Person1#: Can I get you something to drink?\n#Person2#: Sure, but I don't drink much. So I don't know what to order.\n#Person1#: So how about an aperitif?\n#Person2#: It sounds good. I'd like to start with a Compari.\n#Person1#: Stirred or shaken?\n#Person2#: Stirred will be fine.\n#Person1#: Here you are.\n#Person2#: Thanks. Does the bar have a signature drink?\n#Person1#: Sure. All of our mixed drinks ",
+      "reference": "#Person1# makes drinks for #Person2# at a bar.",
+      "zero_shot": "The conversation is between two friends, Person1 and Person2. They are at a bar discussing drinks. Person1 suggests an aperitif called a Compari, which they stir. Person2 orders a Stirred Compari and a Singer, both alcoholic cocktails. Person1 recommends a non-alcoholic cocktail called a Singer for Person2. Person2 enjoys their drinks and thanks Person1 before leaving.",
+      "fine_tuned": "#Person2# orders an aperitif from #Person1#. Then #Person2# orders a signature drink called a Singer."
+    },
+    {
+      "dialogue": "#Person1#: Hello, Lin Fang!\n#Person2#: Oh! Hi, Lucy!\n#Person1#: What's the next lesson, Lin Fang?\n#Person2#: English.\n#Person1#: Oh, good! That's my favorite subject.\n#Person2#: That's because you always find it so easy. I find it very difficult so I don't like it much.\n#Person1#: Nancy finds English quite difficult too. But she says it's her favorite subject.\n#Person2#: Yes, I know, and her secon",
+      "reference": "Lin Fang and Lucy are talking about their favourite subjects.",
+      "zero_shot": "Lin Fang and Lucy are discussing their favorite subjects with Nancy. Lucy likes English best but finds it difficult, while Nancy prefers English and thinks that math is her favorite subject. Lin Fang also mentions that he enjoys English and has found it easier to learn compared to his other subjects such as math and PE.",
+      "fine_tuned": "Lin Fang tells Lucy that English is her favorite subject while Lucy thinks it's hard for her to learn English. Nancy also likes English but she doesn't like science."
+    }
+  ],
+  "baseline_zeroshot_lengthmatched": {
+    "name": "Zero-shot, length-matched prompt",
+    "rouge1": 0.30137998875976074,
+    "rouge2": 0.07960654737549992,
+    "rougeLsum": 0.2502457133674181,
+    "mean_words": 27.904,
+    "median_words": 25.5
+  },
+  "adapter_dir_mb": 85.373968,
+  "length_attribution": {
+    "rouge1": {
+      "total_gain": 0.13622059619966814,
+      "from_length": 0.01914756345041102,
+      "length_share": 0.14056291034246454
+    },
+    "rouge2": {
+      "total_gain": 0.0765143718487545,
+      "from_length": 0.0039941196837372794,
+      "length_share": 0.05220090797624833
+    },
+    "rougeLsum": {
+      "total_gain": 0.1199961541658778,
+      "from_length": 0.007871293643896188,
+      "length_share": 0.06559621596718201
+    }
+  }
+}

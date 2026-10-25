@@ -1,0 +1,66 @@
+*.safetensors
+*.bin
+*.pt
+*.ckpt
+
+emon1@DESKTOP-E6K9BRT MINGW64 ~/Desktop/Project
+$ pip install huggingface_hub
+Requirement already satisfied: huggingface_hub in C:\Users\emon1\AppData\Local\Programs\Python\Python311\Lib\site-packages (0.36.2)
+Requirement already satisfied: filelock in C:\Users\emon1\AppData\Local\Programs\Python\Python311\Lib\site-packages (from huggingface_hub) (3.29.7)
+Requirement already satisfied: fsspec>=2023.5.0 in C:\Users\emon1\AppData\Local\Programs\Python\Python311\Lib\site-packages (from huggingface_hub) (2026.6.0)
+Requirement already satisfied: packaging>=20.9 in C:\Users\emon1\AppData\Local\Programs\Python\Python311\Lib\site-packages (from huggingface_hub) (26.2)
+Requirement already satisfied: pyyaml>=5.1 in C:\Users\emon1\AppData\Local\Programs\Python\Python311\Lib\site-packages (from huggingface_hub) (6.0.3)
+Requirement already satisfied: requests in C:\Users\emon1\AppData\Local\Programs\Python\Python311\Lib\site-packages (from huggingface_hub) (2.34.2)
+Requirement already satisfied: tqdm>=4.42.1 in C:\Users\emon1\AppData\Local\Programs\Python\Python311\Lib\site-packages (from huggingface_hub) (4.68.4)
+Requirement already satisfied: typing-extensions>=3.7.4.3 in C:\Users\emon1\AppData\Local\Programs\Python\Python311\Lib\site-packages (from huggingface_hub) (4.16.0)
+Requirement already satisfied: colorama in C:\Users\emon1\AppData\Local\Programs\Python\Python311\Lib\site-packages (from tqdm>=4.42.1->huggingface_hub) (0.4.6)
+Requirement already satisfied: charset_normalizer<4,>=2 in C:\Users\emon1\AppData\Local\Programs\Python\Python311\Lib\site-packages (from requests->huggingface_hub) (3.4.9)
+Requirement already satisfied: idna<4,>=2.5 in C:\Users\emon1\AppData\Local\Programs\Python\Python311\Lib\site-packages (from requests->huggingface_hub) (3.18)
+Requirement already satisfied: urllib3<3,>=1.26 in C:\Users\emon1\AppData\Local\Programs\Python\Python311\Lib\site-packages (from requests->huggingface_hub) (2.7.0)
+Requirement already satisfied: certifi>=2023.5.7 in C:\Users\emon1\AppData\Local\Programs\Python\Python311\Lib\site-packages (from requests->huggingface_hub) (2026.6.17)
+
+[notice] A new release of pip is available: 26.2 -> 26.2.2
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+emon1@DESKTOP-E6K9BRT MINGW64 ~/Desktop/Project
+$ hf download emonHasan01/QwenSum-LoRA --local-dir QwenSum-LoRA --exclude "*.safetensors"
+Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]Still waiting to acquire lock on QwenSum-LoRA\.cache\huggingface\.gitignore.lock (elapsed: 0.1 seconds)
+Still waiting to acquire lock on QwenSum-LoRA\.cache\huggingface\.gitignore.lock (elapsed: 0.1 seconds)
+Downloading 'tokenizer.json' to 'QwenSum-LoRA\.cache\huggingface\download\HgM_lKo9sdSCfRtVg7MMFS7EKqo=.f7f96da3a872b5e901575b2067c744ad336c3a3d77a21584d20024557b1bd7f0.incomplete'
+Downloading 'qwensum_light.png' to 'QwenSum-LoRA\.cache\huggingface\download\uNTlnzlGIo77FHi4Zix8fzZAqsk=.ef9701a9403dd1794bb2faf5c6eaecd14c956008d8cd54b42edcd1b7edd8d164.incomplete'
+Downloading 'rouge_comparison.png' to 'QwenSum-LoRA\.cache\huggingface\download\qMi2iPd0LX0sdm4YLhZJtpucmQU=.eac35277d344873a65bdb3ab60462a9d66d35493.incomplete'
+Downloading 'README.md' to 'QwenSum-LoRA\.cache\huggingface\download\Xn7B-BWUGOee2Y6hCZtEhtFu4BE=.f5d53714c2303b7c2d4f27e6fc982be75a9cc840.incomplete'
+Downloading 'chat_template.jinja' to 'QwenSum-LoRA\.cache\huggingface\download\yIUQ6Jg7XpBWXEkozaEkS2ih05g=.bdf7919a96cfe43d50914a007b9c0877bd0ec27e.incomplete'
+Downloading 'metrics.json' to 'QwenSum-LoRA\.cache\huggingface\download\dwv9JJd8GoYAm6ZCo6wNY6Qwsw0=.8085d5b5b13558c656675d7329389ef17bc906c4.incomplete'
+Downloading 'adapter_config.json' to 'QwenSum-LoRA\.cache\huggingface\download\R6eesXwqlbKspnMT6fpvP0Gf-j0=.76b1bec4645beac140f3c7a6c8354997aa7fecda.incomplete'
+Downloading '.gitattributes' to 'QwenSum-LoRA\.cache\huggingface\download\wPaCkH-WbT7GsmxMKKrNZTV4nSM=.0cbc24e4bc81bc384242ea4084263059822b0df6.incomplete'
+Download complete. Moving file to QwenSum-LoRA\rouge_comparison.png
+Download complete. Moving file to QwenSum-LoRA\chat_template.jinja
+Download complete. Moving file to QwenSum-LoRA\README.md
+Download complete. Moving file to QwenSum-LoRA\metrics.json
+Download complete. Moving file to QwenSum-LoRA\adapter_config.json
+Download complete. Moving file to QwenSum-LoRA\.gitattributes
+Fetching 9 files:  11%|#1        | 1/9 [00:04<00:35,  4.39s/it]Downloading 'tokenizer_config.json' to 'QwenSum-LoRA\.cache\huggingface\download\vzaExXFZNBay89bvlQv-ZcI6BTg=.770e41d6c92519d525eede4cbcf3ba27f6425311.incomplete'
+Download complete. Moving file to QwenSum-LoRA\tokenizer_config.json
+Download complete. Moving file to QwenSum-LoRA\qwensum_light.png
+Fetching 9 files:  67%|######6   | 6/9 [00:06<00:02,  1.05it/s]Download complete. Moving file to QwenSum-LoRA\tokenizer.json
+Fetching 9 files: 100%|##########| 9/9 [00:08<00:00,  1.10it/s]
+C:\Users\emon1\Desktop\Project\QwenSum-LoRA
+
+emon1@DESKTOP-E6K9BRT MINGW64 ~/Desktop/Project
+$ cd QwenSum-LoRA
+
+emon1@DESKTOP-E6K9BRT MINGW64 ~/Desktop/Project/QwenSum-LoRA
+$ rm -rf .cache .git
+
+emon1@DESKTOP-E6K9BRT MINGW64 ~/Desktop/Project/QwenSum-LoRA
+$ cat > .gitignore << 'EOF'
+> *.safetensors
+> *.bin
+> *.pt
+> *.ckpt
+>
+
+*.gguf
+__pycache__/
+.ipynb_checkpoints/
