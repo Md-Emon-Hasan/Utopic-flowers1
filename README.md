@@ -35,8 +35,6 @@ does nothing without the base model.
 |---|---|
 | Trainable parameters | 18.5M (1.20% of the base) |
 | Training examples | 6,000 |
-| Training time | 63 min on one T4 |
-| Peak GPU memory | 6.3 GB |
 
 ## Usage
 
